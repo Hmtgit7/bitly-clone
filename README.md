@@ -1,8 +1,8 @@
-![Linklytics Logo](frontend/public/Linklytics.png)
+![Linklytics Logo](./frontend/public/Linklytics.png)
 
 # Bitly Clone
 
-A full-stack URL shortener application inspired by [Bitly](https://bitly.com/), built with **Spring Boot** (Java) for the backend and **React + TypeScript** for the frontend. This project is based on the [EmbarkX | Learn Programming](https://www.youtube.com/@EmbarkXLearnProgramming) YouTube course: [Build Bitly Clone | Spring Boot Full Stack Project | Deploy For FREE | Mastery Course in 12 HOURS](https://www.youtube.com/watch?v=YOUR_VIDEO_LINK).
+A full-stack URL shortener application inspired by Bitly, built with **Spring Boot** (Java) for the backend and **React + TypeScript** for the frontend. This project was designed, developed, and deployed by our team as a modern, production-ready URL shortener platform.
 
 ## 🌐 Live Demo
 
@@ -41,21 +41,6 @@ A full-stack URL shortener application inspired by [Bitly](https://bitly.com/), 
 - TypeScript
 - Vite
 - Tailwind CSS
-
----
-
-## 📚 Learning Roadmap (from the course)
-
-- Project setup in IntelliJ
-- MySQL database modeling
-- Authentication & JWT
-- URL shortening logic
-- Analytics & dashboard
-- Frontend with React + Tailwind
-- Dockerization & deployment
-- Domain linking & end-to-end testing
-
-For a detailed step-by-step guide, follow the [YouTube course](https://www.youtube.com/watch?v=YOUR_VIDEO_LINK) and [course roadmap](https://embarkx.com/roadmap).
 
 ---
 
@@ -102,14 +87,6 @@ docker run -p 8080:8080 bitly-backend
 
 ---
 
-## 🙏 Credits & Resources
-
-- [EmbarkX | Learn Programming YouTube](https://www.youtube.com/@EmbarkXLearnProgramming)
-- [Course Roadmap](https://embarkx.com/roadmap)
-- [Source Code](https://github.com/Hmtgit7/bitly-clone)
-
----
-
 ## 📄 License
 
-This project is for educational purposes. Please refer to the course and author for licensing details. 
+This project is for educational purposes.
