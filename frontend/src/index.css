@@ -1,68 +1,206 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Base colors */
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
+    
+    /* Card and popover colors */
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+    
+    /* Brand colors - Modern purple/blue gradient system */
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 262 83% 70%;
+    --primary-dark: 262 83% 45%;
+    
+    /* Secondary colors */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 9% 46%;
+    
+    /* Accent colors */
+    --accent: 210 100% 56%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 210 100% 66%;
+    
+    /* Muted colors */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* Destructive colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    /* Border and input */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 85% 58%;
+    
+    /* Radius */
+    --radius: 0.75rem;
+    
+    /* Custom gradient colors */
+    --gradient-start: 262 83% 58%;
+    --gradient-middle: 240 100% 58%;
+    --gradient-end: 210 100% 56%;
+    
+    /* Glass effect */
+    --glass-bg: 255 255 255 / 0.08;
+    --glass-border: 255 255 255 / 0.16%;
+    
+    /* Hero gradient */
+    --hero-gradient: linear-gradient(135deg, hsl(262 83% 58%), hsl(240 100% 58%), hsl(210 100% 56%));
+    --hero-gradient-dark: linear-gradient(135deg, hsl(262 83% 45%), hsl(240 100% 45%), hsl(210 100% 46%));
+    
+    /* Feature gradients */
+    --feature-gradient-1: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(240 100% 58%) 100%);
+    --feature-gradient-2: linear-gradient(135deg, hsl(240 100% 58%) 0%, hsl(210 100% 56%) 100%);
+    --feature-gradient-3: linear-gradient(135deg, hsl(210 100% 56%) 0%, hsl(195 100% 56%) 100%);
+    
+    /* Shadow colors */
+    --shadow-color: 262 83% 58% / 0.25;
+    --shadow-strong: 262 83% 58% / 0.35;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    /* Base colors */
+    --background: 224 71% 4%;
+    --foreground: 210 20% 98%;
+    
+    /* Card and popover colors */
+    --card: 224 71% 4%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 20% 98%;
+    
+    /* Brand colors - Brighter in dark mode */
+    --primary: 262 83% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 262 83% 75%;
+    --primary-dark: 262 83% 50%;
+    
+    /* Secondary colors */
+    --secondary: 215 27% 17%;
+    --secondary-foreground: 210 20% 98%;
+    
+    /* Accent colors */
+    --accent: 210 100% 58%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 210 100% 68%;
+    
+    /* Muted colors */
+    --muted: 215 27% 17%;
+    --muted-foreground: 217 10% 65%;
+    
+    /* Destructive colors */
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 20% 98%;
+    
+    /* Border and input */
+    --border: 215 27% 17%;
+    --input: 215 27% 17%;
+    --ring: 262 85% 65%;
+    
+    /* Custom gradient colors for dark mode */
+    --gradient-start: 262 83% 65%;
+    --gradient-middle: 240 100% 65%;
+    --gradient-end: 210 100% 58%;
+    
+    /* Glass effect for dark mode */
+    --glass-bg: 0 0 0 / 0.2;
+    --glass-border: 255 255 255 / 0.08;
+    
+    /* Hero gradient for dark mode */
+    --hero-gradient: linear-gradient(135deg, hsl(262 83% 65%), hsl(240 100% 65%), hsl(210 100% 58%));
+    --hero-gradient-dark: linear-gradient(135deg, hsl(262 83% 50%), hsl(240 100% 50%), hsl(210 100% 48%));
+    
+    /* Feature gradients for dark mode */
+    --feature-gradient-1: linear-gradient(135deg, hsl(262 83% 65%) 0%, hsl(240 100% 65%) 100%);
+    --feature-gradient-2: linear-gradient(135deg, hsl(240 100% 65%) 0%, hsl(210 100% 58%) 100%);
+    --feature-gradient-3: linear-gradient(135deg, hsl(210 100% 58%) 0%, hsl(195 100% 58%) 100%);
+    
+    /* Shadow colors for dark mode */
+    --shadow-color: 262 83% 65% / 0.3;
+    --shadow-strong: 262 83% 65% / 0.4;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass morphism effects */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/10;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: var(--hero-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Modern shadows */
+  .shadow-glow {
+    box-shadow: 0 10px 40px hsl(var(--shadow-color));
+  }
+  
+  .shadow-glow-strong {
+    box-shadow: 0 20px 60px hsl(var(--shadow-strong));
+  }
+  
+  /* Button hover effects */
+  .btn-gradient {
+    background: var(--hero-gradient);
+    @apply text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-glow;
+  }
+  
+  .btn-glass {
+    @apply glass text-white font-semibold transition-all duration-300 hover:bg-white/20 hover:scale-105;
   }
 }
